@@ -22,6 +22,7 @@ const startGame = event => {
             const randomNumber = Math.floor(Math.random() * maxBombNumber) + 1
             if (!bombs.includes(randomNumber))
                 bombs.push(randomNumber)
+            console.log(bombs)
         }
         return bombs
     }
@@ -72,13 +73,6 @@ const startGame = event => {
     //Generazione delle bombe
     const bombs = generatorBombs(numberOfCells, totalBombs)
 
-
-
-
-
-
-
-
     //-----------------------------------------
     //-----------------------------------------
     //-----------------------------------------
@@ -91,9 +85,20 @@ const startGame = event => {
         cell.addEventListener('click', () => {
             if (cell.classList.contains('clicked')) return
             cell.classList.add('clicked')
+            if (i === bombs[i]) {
+                cell.classList.add('explosion')
+            }
+            const hitBomb = bombs.includes(parseInt(cell.innerText))
+            console.log(cell.innerText)
+            if (hitBomb) {
+                console.log(`Game Over! Hai pestato una bomba! Il tuo punteggio è di ${score}`)
+                cell.classList.add('explosion')
+            }
+            else {
+                score++
+                scoreDisplay.innerText = score
+            }
 
-            score++
-            scoreDisplay.innerText = score
 
 
         })
