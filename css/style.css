@@ -1,0 +1,102 @@
+/*Generics*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    font-size: 1.5rem;
+    align-items: center;
+
+}
+
+header h1 {
+    padding: 0 20px;
+}
+
+.logo-title,
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons select {
+    width: 50px;
+    text-align: center;
+}
+
+.buttons button {
+    width: 80px;
+    text-align: center;
+}
+
+/*Main*/
+main {
+    background-color: #7FFFD4;
+}
+
+.grid {
+    width: 750px;
+    height: 750px;
+    margin: 0 auto;
+    padding: 80px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.grid .cell {
+    cursor: pointer;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid2 .cell {
+    cursor: pointer;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid3 .cell {
+    cursor: pointer;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clicked {
+    background-color: rgb(0, 89, 255);
+}
+
+footer {
+    padding: 20px 10px;
+    font-size: 1.5rem;
+}
