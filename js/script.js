@@ -9,6 +9,7 @@ let rows = 10
 let cols = 10
 const numberOfCells = rows * cols
 
+let score = 0
 
 //FUNZIONI
 const createCell = (content) => {
@@ -23,18 +24,19 @@ const createCell = (content) => {
 for (let i = 1; i <= numberOfCells; i++) {
     const cell = createCell(i)
 
-    cell.addEventListener('click', function () {
-        cell.classList.toggle('clicked')
-        console.log(cell.innerText)
-
-
-    })
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         grid.appendChild(cell)
 
     })
-
+    //CLICK DELLA CELLA
+    cell.addEventListener('click', function () {
+        if (cell.classList.contains('clicked')) return
+        score++;
+        cell.classList.add('clicked')
+        console.log(cell.innerText)
+        console.log(score)
+    })
 }
 
 
