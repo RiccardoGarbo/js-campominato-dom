@@ -50,8 +50,8 @@ const startGame = event => {
     let cols;
     switch (level) {
         case 'easy':
-            rows = 3
-            cols = 3
+            rows = 10
+            cols = 10
             break;
         case 'medium':
             rows = 9
