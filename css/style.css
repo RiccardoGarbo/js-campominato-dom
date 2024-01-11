@@ -24,6 +24,7 @@ header {
     font-size: 1.5rem;
     align-items: center;
 
+
 }
 
 header h1 {
@@ -34,10 +35,11 @@ header h1 {
 .buttons {
     display: flex;
     align-items: center;
+
 }
 
 .buttons select {
-    width: 50px;
+    width: 100px;
     text-align: center;
 }
 
@@ -63,36 +65,32 @@ main {
 
 .grid .cell {
     cursor: pointer;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid.easy .cell {
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
-.grid2 .cell {
-    cursor: pointer;
+
+.grid.medium .cell {
     width: calc(100% / 9);
     height: calc(100% / 9);
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
-.grid3 .cell {
-    cursor: pointer;
+.grid.hard .cell {
     width: calc(100% / 7);
     height: calc(100% / 7);
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.clicked {
+.grid .cell.clicked {
+    cursor: not-allowed;
     background-color: rgb(0, 89, 255);
 }
 
