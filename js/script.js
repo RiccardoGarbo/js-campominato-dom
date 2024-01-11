@@ -27,7 +27,13 @@ const startGame = event => {
         }
         return bombs
     }
+    // Funzione per stabilire l'ENDGAME
 
+    const endGame = (score, hasWon = false) => {
+        const message = hasWon ? 'Hai vinto! Complimenti' : `Hai perso! Il punteggio è di ${score} punti`
+        alert(message)
+
+    }
 
     //Impedire che si formino più griglie
     grid.innerText = ''
@@ -44,8 +50,8 @@ const startGame = event => {
     let cols;
     switch (level) {
         case 'easy':
-            rows = 10
-            cols = 10
+            rows = 3
+            cols = 3
             break;
         case 'medium':
             rows = 9
@@ -87,22 +93,21 @@ const startGame = event => {
         cell.addEventListener('click', () => {
             if (cell.classList.contains('clicked')) return
             cell.classList.add('clicked')
-            if (i === bombs[i]) {
-                cell.classList.add('explosion')
-            }
             const hitBomb = bombs.includes(parseInt(cell.innerText))
             console.log(cell.innerText)
+            //Controllo se ha colpito una bomba quindi ha perso
             if (hitBomb) {
-                console.log(`Game Over! Hai pestato una bomba! Il tuo punteggio è di ${score}`)
                 cell.classList.add('explosion')
+                endGame(score, false)
+
             }
             //Aumento del punteggio
             score++
             scoreDisplay.innerText = score
             //Controllo se l'utente ha raggiunto il punteggio massimo e quindi se ha VINTO
             if (score === maxScore) {
-                console.log(
-                    `Complimenti hai vinto! Ottenendo ${maxScore} punti!`)
+                endGame(score, true)
+
 
             }
 
