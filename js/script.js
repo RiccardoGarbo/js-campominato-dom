@@ -23,6 +23,7 @@ const startGame = event => {
             if (!bombs.includes(randomNumber))
                 bombs.push(randomNumber)
             console.log(bombs)
+
         }
         return bombs
     }
@@ -43,7 +44,7 @@ const startGame = event => {
     let cols;
     switch (level) {
         case 'easy':
-            rows = 10;
+            rows = 10
             cols = 10
             break;
         case 'medium':
@@ -79,6 +80,7 @@ const startGame = event => {
     //-----------------------------------------
 
     //Svolgimento programma
+
     for (let i = 1; i <= numberOfCells; i++) {
         const cell = createCell(i)
         //CLICK DELLA CELLA
@@ -94,12 +96,15 @@ const startGame = event => {
                 console.log(`Game Over! Hai pestato una bomba! Il tuo punteggio è di ${score}`)
                 cell.classList.add('explosion')
             }
-            else {
-                score++
-                scoreDisplay.innerText = score
+            //Aumento del punteggio
+            score++
+            scoreDisplay.innerText = score
+            //Controllo se l'utente ha raggiunto il punteggio massimo e quindi se ha VINTO
+            if (score === maxScore) {
+                console.log(
+                    `Complimenti hai vinto! Ottenendo ${maxScore} punti!`)
+
             }
-
-
 
         })
         grid.appendChild(cell)
